@@ -1,0 +1,15 @@
+﻿body {
+    padding-top: 0px;
+    box-sizing: border-box;
+    min-height: 100Vh;
+    position: relative;
+    padding-bottom: 7rem;
+}
+
+header {
+    height: 100px;
+    background-image: url('../../images/hospitalbg.jpg');
+    background-repeat: space;
+    background-position: center;
+    background-size: cover;
+}

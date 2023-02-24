@@ -16,6 +16,7 @@ namespace HospitalManagement.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public string User_type { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
