@@ -106,6 +106,3 @@ D:\DXC Training\Mvc\Project\HospitalManagement\bin\Microsoft.CodeDom.Providers.D
 D:\DXC Training\Mvc\Project\HospitalManagement\obj\Debug\HospitalManagement.csproj.CopyComplete
 D:\DXC Training\Mvc\Project\HospitalManagement\obj\Debug\HospitalManagement.dll
 D:\DXC Training\Mvc\Project\HospitalManagement\obj\Debug\HospitalManagement.pdb
-D:\DXC Training\Mvc\Project\HospitalManagement\obj\Debug\HospitalManagement.Migrations.InitialCreate.resources
-D:\DXC Training\Mvc\Project\HospitalManagement\obj\Debug\HospitalManagement.csproj.GenerateResource.cache
-D:\DXC Training\Mvc\Project\HospitalManagement\obj\Debug\HospitalManagement.Migrations.wertytfd.resources

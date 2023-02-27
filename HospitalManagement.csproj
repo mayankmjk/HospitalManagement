@@ -169,24 +169,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminsController.cs" />
     <Compile Include="Controllers\AppointmentsController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\DoctorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IdeaController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202302221203401_InitialCreate.cs" />
-    <Compile Include="Migrations\202302221203401_InitialCreate.designer.cs">
-      <DependentUpon>202302221203401_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202302230722339_wertytfd.cs" />
-    <Compile Include="Migrations\202302230722339_wertytfd.designer.cs">
-      <DependentUpon>202302230722339_wertytfd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CRUD.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -204,10 +197,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\CarouselImg1.png" />
+    <Content Include="Images\CarouselImg2.png" />
+    <Content Include="Images\CarouselImg3.jpg" />
     <Content Include="Images\HospitalBg.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\css file\Adminindex.css" />
     <Content Include="Scripts\css file\Layout.css" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -258,16 +255,6 @@
     <Content Include="Views\Hospitals\Details.cshtml" />
     <Content Include="Views\Hospitals\Edit.cshtml" />
     <Content Include="Views\Hospitals\Index.cshtml" />
-    <Content Include="Views\Doctors\Create.cshtml" />
-    <Content Include="Views\Doctors\Delete.cshtml" />
-    <Content Include="Views\Doctors\Details.cshtml" />
-    <Content Include="Views\Doctors\Edit.cshtml" />
-    <Content Include="Views\Doctors\Index.cshtml" />
-    <Content Include="Views\Patients\Create.cshtml" />
-    <Content Include="Views\Patients\Delete.cshtml" />
-    <Content Include="Views\Patients\Details.cshtml" />
-    <Content Include="Views\Patients\Edit.cshtml" />
-    <Content Include="Views\Patients\Index.cshtml" />
     <Content Include="Views\Departments\Create.cshtml" />
     <Content Include="Views\Departments\Delete.cshtml" />
     <Content Include="Views\Departments\Details.cshtml" />
@@ -279,6 +266,65 @@
     <Content Include="Views\Appointments\Edit.cshtml" />
     <Content Include="Views\Appointments\Index.cshtml" />
     <Content Include="Views\Shared\Doctor.cshtml" />
+    <Content Include="Views\Doctors\Create.cshtml" />
+    <Content Include="Views\Doctors\Delete.cshtml" />
+    <Content Include="Views\Doctors\Details.cshtml" />
+    <Content Include="Views\Doctors\Edit.cshtml" />
+    <Content Include="Views\Doctors\Index.cshtml" />
+    <Content Include="Views\Patients\Create.cshtml" />
+    <Content Include="Views\Patients\Delete.cshtml" />
+    <Content Include="Views\Patients\Details.cshtml" />
+    <Content Include="Views\Patients\Edit.cshtml" />
+    <Content Include="Views\Patients\Index.cshtml" />
+    <Content Include="Views\Admins\Create.cshtml" />
+    <Content Include="Views\Admins\Delete.cshtml" />
+    <Content Include="Views\Admins\Details.cshtml" />
+    <Content Include="Views\Admins\Edit.cshtml" />
+    <Content Include="Views\Admins\Index.cshtml" />
+    <Content Include="Views\ideas\AdminController.cshtml" />
+    <Content Include="Views\ideas\AddAmbulance.cshtml" />
+    <Content Include="Views\ideas\AddAmbulanceDriver.cshtml" />
+    <Content Include="Views\ideas\AddAnnouncement.cshtml" />
+    <Content Include="Views\ideas\AddAppointment.cshtml" />
+    <Content Include="Views\ideas\AddDepartment.cshtml" />
+    <Content Include="Views\ideas\AddDoctor.cshtml" />
+    <Content Include="Views\ideas\AddMedicine.cshtml" />
+    <Content Include="Views\ideas\AddSchedule.cshtml" />
+    <Content Include="Views\ideas\DeleteAmbulance.cshtml" />
+    <Content Include="Views\ideas\DeleteAnnouncement.cshtml" />
+    <Content Include="Views\ideas\DeleteAppointment.cshtml" />
+    <Content Include="Views\ideas\DeleteComplain.cshtml" />
+    <Content Include="Views\ideas\DeleteDepartment.cshtml" />
+    <Content Include="Views\ideas\DeleteDoctor.cshtml" />
+    <Content Include="Views\ideas\DeleteMedicine.cshtml" />
+    <Content Include="Views\ideas\DeletePatient.cshtml" />
+    <Content Include="Views\ideas\DeleteSchedule.cshtml" />
+    <Content Include="Views\ideas\DepartmentList.cshtml" />
+    <Content Include="Views\ideas\DetailOfAppointment.cshtml" />
+    <Content Include="Views\ideas\DoctorDetail.cshtml" />
+    <Content Include="Views\ideas\EditAmbulance.cshtml" />
+    <Content Include="Views\ideas\EditAmbulanceDriver.cshtml" />
+    <Content Include="Views\ideas\EditAnnouncement.cshtml" />
+    <Content Include="Views\ideas\EditAppointment.cshtml" />
+    <Content Include="Views\ideas\EditComplain.cshtml" />
+    <Content Include="Views\ideas\EditDepartment.cshtml" />
+    <Content Include="Views\ideas\EditDoctors.cshtml" />
+    <Content Include="Views\ideas\EditMedicine.cshtml" />
+    <Content Include="Views\ideas\EditPatient.cshtml" />
+    <Content Include="Views\ideas\EditSchedule.cshtml" />
+    <Content Include="Views\ideas\Index.cshtml" />
+    <Content Include="Views\ideas\ListOfAmbulanceDrivers.cshtml" />
+    <Content Include="Views\ideas\ListOfAmbulances.cshtml" />
+    <Content Include="Views\ideas\ListOfAnnouncement.cshtml" />
+    <Content Include="Views\ideas\ListOfAppointments.cshtml" />
+    <Content Include="Views\ideas\ListOfComplains.cshtml" />
+    <Content Include="Views\ideas\ListOfDoctors.cshtml" />
+    <Content Include="Views\ideas\ListOfMedicine.cshtml" />
+    <Content Include="Views\ideas\ListOfPatients.cshtml" />
+    <Content Include="Views\ideas\ListOfSchedules.cshtml" />
+    <Content Include="Views\ideas\PendingAppointments.cshtml" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Admins\AdminHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -295,14 +341,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202302221203401_InitialCreate.resx">
-      <DependentUpon>202302221203401_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202302230722339_wertytfd.resx">
-      <DependentUpon>202302230722339_wertytfd.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,8 +1,10 @@
-﻿using HospitalManagement.Migrations;
+﻿/*using HospitalManagement.Migrations;*/
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -29,6 +31,26 @@ namespace HospitalManagement.Models
             {
                 con.Close();
             }
+        }
+
+        public string FetchUserTypeInAspNetUsers(string Email)
+        {
+            string query = $"select User_type from AspNetUsers where Email='{Email}'";
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            string UserType = "";
+
+            foreach (DataRow drow in dt.Rows)
+            {
+                UserType = (drow["User_type"]).ToString();
+
+            }
+
+            return UserType;
         }
     }
 }

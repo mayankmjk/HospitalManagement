@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Hospital Management</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/css file/Layout.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div>
+            <p id="header-text">Hospital Sytem !!</p>
+        </div>
+    </header>
+    <div class="navbar navbar-inverse ">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("HospitalManagement", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li>@Html.ActionLink("Doctor", "Index", "Doctors")</li>
+                    <li>@Html.ActionLink("Patient", "Index", "Patient")</li>
+
+
+                    @* @if (HttpContext.Current.User.IsInRole("Patient"))
+                        {
+
+                            <li>@Html.ActionLink("Patient Form", "Create", "Patients")</li>
+                            <li>@Html.ActionLink("ViewAppointments", "ViewAppointments", "Patients")</li>
+
+                        }
+
+                        else if (HttpContext.Current.User.IsInRole("Doctor"))
+                        {
+                            <li>@Html.ActionLink("Doctor Form", "Create", "Doctors")</li>
+
+                        }
+
+                        else if (HttpContext.Current.User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink("Admin Form", "Create", "Admins")</li>
+
+                        }*@
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -mabe by team</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

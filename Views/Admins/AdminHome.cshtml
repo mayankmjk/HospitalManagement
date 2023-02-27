@@ -1,0 +1,138 @@
+﻿@model IEnumerable<HospitalManagement.Models.Admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+
+
+    
+
+
+
+
+
+
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="~/Scripts/css file/Adminindex.css" rel="stylesheet" />
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+        .row.content {
+            height: 1500px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <h4>John's Blog</h4>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Blog..">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+               <br />
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"> @Html.ActionLink("Home", "Create")</li>
+                    <li> @Html.ActionLink("Create New", "Details")</li>
+                    <li> @Html.ActionLink("Create New", "Create")</li>
+                    <li> @Html.ActionLink("Create New", "Details")</li>
+                </ul><br>
+
+            </div>
+
+            <div class="col-sm-9">
+                <div class="container-fluid text-center">
+                    <h2>SERVICES</h2>
+                    <h4>What we offer</h4>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="thumbnail">
+                                <span class="glyphicon glyphicon-off"></span>
+
+                                <img src="~/Images/HospitalBg.jpg" alt="New York">
+                                <h4>POWER</h4>
+                                <p>Lorem ipsum dolor sit amet..</p>
+
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="col-sm-offset-6">
+                             <div class="thumbnail">
+                                <span class="glyphicon glyphicon-off"></span>
+
+                                <img src="~/Images/HospitalBg.jpg" alt="New York">
+                                <h4>POWER</h4>
+                                <p>Lorem ipsum dolor sit amet..</p>
+
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-pull-6">
+                            <span class="glyphicon glyphicon-lock"></span>
+                            <h4>JOB DONE</h4>
+                            <p>Lorem ipsum dolor sit amet..</p>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-sm-push-6">
+                            <span class="glyphicon glyphicon-leaf"></span>
+                            <h4>GREEN</h4>
+                            <p>Lorem ipsum dolor sit amet..</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <span class="glyphicon glyphicon-certificate"></span>
+                            <h4>CERTIFIED</h4>
+                            <p>Lorem ipsum dolor sit amet..</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <span class="glyphicon glyphicon-wrench"></span>
+                            <h4>HARD WORK</h4>
+                            <p>Lorem ipsum dolor sit amet..</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+           
+        </div>
+    </div>
+
+   
+
+</body>
+
+

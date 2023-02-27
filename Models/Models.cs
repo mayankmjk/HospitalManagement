@@ -8,20 +8,20 @@ using System.Web;
 
 namespace HospitalManagement.Models
 {
-    public class Models
-    {
-    }
+   
 
     public class Doctor
     {
         public int Id { get; set; }
 
 
-        public string DName { get; set; }
+        public string Name { get; set; }
+       
         public string Speciality { get; set; }
         public float Experience { get; set; }
-        public string DMobile { get; set; }
-        public string DAddress { get; set; }
+        public Gender Gender { get; set; }
+        public string Mobile { get; set; }
+        public string City { get; set; }
 
     }
 
@@ -32,6 +32,7 @@ namespace HospitalManagement.Models
         public DbSet<Department> Departments { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
 
+        public DbSet<Admin> Admins { get; set; }
 
     }
 
@@ -39,13 +40,15 @@ namespace HospitalManagement.Models
     {
         public int Id { get; set; }
         public string PName { get; set; }
+       
         public string Disease { get; set; }
         public string PatientMobile { get; set; }
         public int PatientAge { get; set; }
         public Gender PatientGender { get; set; }
         public string PatientBloodGroup { get; set; }
-        public string PatientAddress { get; set; }
+        public string City { get; set; }
     }
+  
     public enum Gender
     {
         Male,
@@ -73,6 +76,17 @@ namespace HospitalManagement.Models
 
         public DateTime AppointmentDate { get; set; }
         public string slot { get; set; }
+
+    }
+
+    public class Admin
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+       public string User { get; set; }
+        public string PhoneNumber { get; set; }
+        public string City { get; set; }
+       
 
     }
 

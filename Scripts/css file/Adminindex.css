@@ -1,0 +1,48 @@
+﻿body {
+    position: relative;
+}
+#section1 {
+    padding-top: 50px;
+    height: 800px;
+    color: #00bcd4;
+    background-color: #ffde001e;
+    
+}
+
+#section2 {
+    padding-top: 50px;
+    height: 900px;
+    color: #fff;
+    background-color: #673ab7;
+}
+
+#section3 {
+    padding-top: 50px;
+    height: 500px;
+    color: #fff;
+    background-color: #ff9800;
+}
+
+#section41 {
+    padding-top: 50px;
+    height: 500px;
+    color: #fff;
+    background-color: #00bcd4;
+}
+
+#section42 {
+    padding-top: 50px;
+    height: 500px;
+    color: #fff;
+    background-color: #009688;
+}
+
+
+
+#myimg {
+    height: 100px;
+    background-image: url('../../Images/hospitalbg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

@@ -76,10 +76,14 @@ namespace HospitalManagement.Controllers
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+         
+             CRUD cr = new CRUD();
+            string UserType = cr.FetchUserTypeInAspNetUsers(model.Email);
+
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToLocal(returnUrl,UserType);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -114,13 +118,18 @@ namespace HospitalManagement.Controllers
             if (!ModelState.IsValid)
             {
                 return View(model);
-            }
 
+            }
+            
             // The following code protects for brute force attacks against the two factor codes. 
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
             var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+
+            /* CRUD cr = new CRUD();
+             string UserType = cr.FetchUserTypeInAspNetUsers(model.Email);*/
+
             switch (result)
             {
                 case SignInStatus.Success:
@@ -175,8 +184,8 @@ namespace HospitalManagement.Controllers
                     switch (model.User_type)
                     {
                         case "Admin": RoleId = "101"; break;
-                        case "Doctor": RoleId = "103"; break;
-                        case "Patient": RoleId = "102"; break;
+                        case "Doctor": RoleId = "102"; break;
+                        case "Patient": RoleId = "103"; break;
 
 
                     }
@@ -184,7 +193,8 @@ namespace HospitalManagement.Controllers
                     string ans=cr.insertRecord(UserId, RoleId);
                    // crd.InsertIntoAspNetUserRoles(UserId, RoleId); //insert into the aspnetuserroles table
                    if(ans== "Success Insertion in AspNetUserroles")
-                    return RedirectToAction("Index", "Home");
+                   // return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", $"{model.User_type}s");
                 }
                 AddErrors(result);
             }
@@ -473,6 +483,14 @@ namespace HospitalManagement.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        private ActionResult RedirectToLocal(string returnUrl,string type)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            return RedirectToAction("Index", $"{type}s");
+        }
         internal class ChallengeResult : HttpUnauthorizedResult
         {
             public ChallengeResult(string provider, string redirectUri)

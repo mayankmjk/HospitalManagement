@@ -46,7 +46,7 @@ namespace HospitalManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DName,Speciality,Experience,DMobile,DAddress")] Doctor doctor)
+        public ActionResult Create([Bind(Include = "Id,Name,User,Speciality,Experience,Gender,Mobile,City")] Doctor doctor)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace HospitalManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DName,Speciality,Experience,DMobile,DAddress")] Doctor doctor)
+        public ActionResult Edit([Bind(Include = "Id,Name,User,Speciality,Experience,Gender,Mobile,City")] Doctor doctor)
         {
             if (ModelState.IsValid)
             {
